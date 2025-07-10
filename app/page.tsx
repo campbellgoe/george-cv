@@ -41,6 +41,8 @@ export default function CVWebsite() {
       logoAlt: "MASSLESS LTD. Logo",
       companyLink: "https://www.massless.ltd/",
       logoStyle: "max-w-full h-auto",
+      width: 939/3,
+      height: 119/3,
     },
     {
       title: "Front-end Engineer",
@@ -53,6 +55,8 @@ export default function CVWebsite() {
       logoAlt: "TravelLocal Logo",
       companyLink: "https://www.travellocal.com/",
       logoStyle: "w-full",
+      width: 250,
+      height: 250
     },
     {
       title: "Software Engineer",
@@ -65,6 +69,8 @@ export default function CVWebsite() {
       logoAlt: "DRPG Logo",
       companyLink: "https://www.drpgroup.com/",
       logoStyle: "w-full filter invert", // Apply invert filter
+      width: 974/3,
+      height: 188/3,
     },
     {
       title: "Frontend Developer",
@@ -77,6 +83,8 @@ export default function CVWebsite() {
       logoAlt: "Zengenti Ltd. Logo",
       companyLink: "https://zengenti.com/",
       logoStyle: "filter invert", // Apply invert filter
+      width: 175*1.5,
+      height: 55*1.5
     },
     {
       title: "Programmer",
@@ -89,6 +97,8 @@ export default function CVWebsite() {
       logoAlt: "Express KCS Logo",
       companyLink: "https://www.ekcs.co/",
       logoStyle: "",
+      width: 250,
+      height: 250
     },
     {
       title: "Freelance HTML, CSS, JS Programmer.",
@@ -101,6 +111,8 @@ export default function CVWebsite() {
       logoAlt: "Break the cube",
       companyLink: "https://kirkwhayman.com",
       logoStyle: "max-w-full h-auto",
+      width: 250,
+      height: 250
     },
   ]
 
@@ -237,6 +249,8 @@ export default function CVWebsite() {
                         <Image
                           src={job.logo || "/placeholder.svg"}
                           alt={job.logoAlt}
+                          width={job.width}
+                          height={job.height}
                           className={`max-h-[175px] w-auto object-contain ${job.logoStyle}`}
                         />
                       </a>
@@ -290,11 +304,20 @@ export default function CVWebsite() {
                 ))}
               </div>
               <div className="flex justify-center items-center">
+                <a
+                  href="https://learn-with-ai-two.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
                 <Image
                   src={CodeyImage || "/placeholder.svg"}
                   className="max-w-full h-auto rounded-xl shadow-lg"
                   alt="Codey the code challenge generator bot"
+                  width={250}
+                  height={250}
                 />
+                </a>
               </div>
             </div>
             <Separator className="my-4" />
@@ -306,7 +329,7 @@ export default function CVWebsite() {
         </Card>
 
         {/* Contact CTA */}
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 s">
           <CardContent className="text-center py-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Let{"'"}s Work Together</h2>
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
