@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, ExternalLink, MapPin, Calendar, Building } from "lucide-react"
+import Image from "next/image"
 
 // Import images
 const TravelLocalLogo = "/images/travellocal-logo.svg"
@@ -137,12 +138,12 @@ export default function CVWebsite() {
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">George O. E. Campbell's CV</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">George O. E. Campbell{"'"}s CV</h1>
               <p className="text-xl text-gray-600 mb-4">Adaptable, reliable problem solver</p>
               <p className="text-gray-700 max-w-2xl">
                 Self-taught, highly adaptable individual. When it comes to overcoming problems that matter, such as
                 understanding the problem and utilising UI/UX Design thinking, what we do as software engineers and
-                designers, affects and matters to people. That's why I care about developing and designing quality
+                designers, affects and matters to people. That{"'"}s why I care about developing and designing quality
                 software, without dark patterns.
               </p>
             </div>
@@ -233,7 +234,7 @@ export default function CVWebsite() {
                   {job.logo && (
                     <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center md:justify-end items-center">
                       <a href={job.companyLink} target="_blank" rel="noopener noreferrer">
-                        <img
+                        <Image
                           src={job.logo || "/placeholder.svg"}
                           alt={job.logoAlt}
                           className={`max-h-[175px] w-auto object-contain ${job.logoStyle}`}
@@ -289,7 +290,7 @@ export default function CVWebsite() {
                 ))}
               </div>
               <div className="flex justify-center items-center">
-                <img
+                <Image
                   src={CodeyImage || "/placeholder.svg"}
                   className="max-w-full h-auto rounded-xl shadow-lg"
                   alt="Codey the code challenge generator bot"
@@ -298,7 +299,7 @@ export default function CVWebsite() {
             </div>
             <Separator className="my-4" />
             <p className="text-gray-700">
-              In my free time you'll often find me either going for a walk outside, or indoors coding. I also created{" "}
+              In my free time you{"'"}ll often find me either going for a walk outside, or indoors coding. I also created{" "}
               <strong>Codey the code challenge generator bot</strong> as a personal project.
             </p>
           </CardContent>
@@ -307,9 +308,9 @@ export default function CVWebsite() {
         {/* Contact CTA */}
         <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
           <CardContent className="text-center py-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Let's Work Together</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Let{"'"}s Work Together</h2>
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              Interested in collaborating? I'm always open to discussing new opportunities and exciting projects. Feel
+              Interested in collaborating? I{"'"}m always open to discussing new opportunities and exciting projects. Feel
               free to reach out!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
