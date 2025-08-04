@@ -17,16 +17,25 @@ const BreakItImage = "/images/breakit-webgl.png"
 
 export default function CVWebsite() {
   const skills = [
+    "React.js, Three.js, R3F",
+    "Node.js, Deno",
     "Next.js",
-    "React",
-    "Node.js",
-    "TypeScript",
-    "JavaScript",
     "HTML",
     "CSS",
-    "Rust",
-    "Python",
-    "UI/UX Design",
+    "JavaScript",
+    "TypeScript",
+    "Tailwindcss",
+    "(framer) motion",
+    "WebAPIs",
+    "Accessibility",
+    "Cyber Security",
+    "MongoDB, Mongoose",
+    "Rust, Bevy",
+    "UI, UX Design",
+    "Bash,Shell, CLI scripting",
+    "AWS, DevOps, CI, CD",
+    "Persistence",
+    "Autonomy"
   ]
 
   const workExperience = [
