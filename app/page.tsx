@@ -45,7 +45,7 @@ export default function CVWebsite() {
       period: "May 2021 - Present",
       location: "Remote, UK",
       description:
-        "I collaborate closely with clients, primarily small independent startups, to bring their ideas to life. From concept to launch, I create engaging, visually immersive browser experiences tailored to their vision while ensuring simplicity and functionality for the end user. A recent project involved developing a 3D web game using R3F (React Three Fiber), and included an interactive collidable environment.",
+        "I collaborate closely with clients, primarily small independent startups, to bring their ideas to life. From concept to launch, I create engaging, visually immersive browser experiences tailored to their vision while ensuring simplicity and functionality for the end user. A recent project involved developing a 3D web game using R3F (React Three Fiber), and included an interactive collidable environment. \nFor my first client I built kirkwhayman.com which won several SOTD awards on awwwards.com\n",
       logo: MasslessLogo,
       logoAlt: "MASSLESS LTD. Logo",
       companyLink: "https://www.massless.ltd/",
@@ -59,7 +59,7 @@ export default function CVWebsite() {
       period: "March 2023 - November 2023",
       location: "Remote",
       description:
-        "Working with Next.js, GraphQL, Storybook, amongst other technologies, I solved a multitude of problems as a Front-end engineer. I drove development forward through solving tasks myself and communicating with relevant colleagues to get blocking tasks unblocked. Communication was central to our operations at TravelLocal.",
+        "Working with Next.js, GraphQL, Storybook, amongst other technologies, I solved a multitude of problems as a Front-end engineer. I drove development forward through solving innumerable tasks myself and communicating with relevant colleagues to get blocking tasks unblocked, and helped other engineers with their tasks. Communication was central to our operations at TravelLocal.",
       logo: TravelLocalLogo,
       logoAlt: "TravelLocal Logo",
       companyLink: "https://www.travellocal.com/",
@@ -73,7 +73,7 @@ export default function CVWebsite() {
       period: "Remote",
       location: "Remote",
       description:
-        "I helped optimise a 3D winter wonderland project celebrating 40 years of DRPG. I developed the Jaguar C-Type customiser/visualiser tool in react static, involving animating between images using user interaction and projecting hotspots around the car using trigonometry functions. I also worked on a video conferencing solution with a virtual 3D photosphere environment.",
+        "I helped optimise a 3D winter wonderland project celebrating 40 years of DRPG, including implementing Point cloud falling snow and fixed a bug which allowed the project to work on smartphone devices, taking FPS from 2-3 to 30-60. I developed the Jaguar C-Type customiser/visualiser tool in react static, involving animating between images using user interaction and projecting hotspots around the car using trigonometry functions. Jaguar received customers for the C-Type continuation via the customiser app. I also worked on a video conferencing solution with a virtual 3D photosphere environment including projecting videos onto the environment.",
       logo: DrpgLogo,
       logoAlt: "DRPG Logo",
       companyLink: "https://www.drpgroup.com/",
@@ -87,7 +87,7 @@ export default function CVWebsite() {
       period: "",
       location: "",
       description:
-        "Here I worked diligently in squads of designers and developers to produce elegant yet functional websites for Universities and councils. We used React.js for website development and an Angular based CMS. The main skills I used were React.js, Redux, JavaScript, and accessibility.",
+        "Here I worked diligently in squads of designers and developers to produce elegant yet functional websites for Universities and Councils. We used React.js for website development and an Angular based CMS. The main skills I used were React.js, Redux, JavaScript, and accessibility. I debugged a lot of React code and improved the quality of the front-end codebases, including using ARIA attribute values in JSX, and taking care to ensure the UI worked properly for people with colour-blindness.",
       logo: ZengentiLogo,
       logoAlt: "Zengenti Ltd. Logo",
       companyLink: "https://zengenti.com/",
@@ -101,7 +101,7 @@ export default function CVWebsite() {
       period: "",
       location: "",
       description:
-        "This was my first time working in a small team of designers and developers, where I also learnt how to use JIRA and Git for daily use. I implemented a modular i18n solution into the React codebase, using Locize for translators, and wrote lots of mocha tests. The main tech used was React.js and Node.js",
+        "This was my first time working in a small team of designers and developers, where I also learnt how to use JIRA and Git for daily use. I implemented a modular i18n solution into the React codebase, using Locize for translators, and wrote lots of mocha tests. The main tech used was React.js and Node.js. The tests I wrote raised the issue of slow loading times, which was due to a number of .then() Promise chains - after removing all the unecessary .thens() the MediaFerry app sped up as a result.",
       logo: EKCSLogo,
       logoAlt: "Express KCS Logo",
       companyLink: "https://www.ekcs.co/",
@@ -110,12 +110,12 @@ export default function CVWebsite() {
       height: 250
     },
     {
-      title: "Freelance HTML, CSS, JS Programmer.",
-      company: "",
+      title: "Sole trader - Freelance - HTML, CSS, JS Programmer.",
+      company: "George O. E. Campbell",
       period: "Started 2016",
-      location: "",
+      location: "Remote",
       description:
-        "I started off by getting my first freelance contracts in 2016, where I broke requirements down, communicated effectively, coded solutions for numerous clients and strengthened my skills in web and mobile development. I made apps with Apache Cordova for mobile including android devices. My highlight experience was developing a Mind Mapping web application implementation for one of my clients, and optimising it.",
+        "I started off by getting my first freelance contracts in 2016, where I broke requirements down, communicated effectively, coded solutions for over 15+ clients and strengthened my skills in web and mobile development. I made apps with Apache Cordova for mobile including android devices. My highlight experience was developing a Mind Mapping web application implementation for one of my clients, and optimising it so it worked responsively on smartphone, tablet, laptop and desktop devices.",
       logo: BreakItImage, // No specific logo for freelance
       logoAlt: "Break the cube",
       companyLink: "https://kirkwhayman.com",
@@ -177,7 +177,7 @@ export default function CVWebsite() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-gray-500" />
-                <span>07947 192 035</span>
+                <span>+44 7947 192 035</span>
               </div>
               <div className="flex items-center gap-2">
                 <ExternalLink className="h-4 w-4 text-gray-500" />
@@ -332,7 +332,7 @@ export default function CVWebsite() {
             <Separator className="my-4" />
             <p className="text-gray-700">
               In my free time you{"'"}ll often find me either going for a walk outside, or indoors coding. I also created{" "}
-              <strong>Codey the code challenge generator bot</strong> as a personal project.
+              <strong><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Bytey the AI challenge generator</a></strong>, found at <ExternalLink className="h-4 w-4 float-left"/><span><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://learn-with-ai-two.vercel.app</a></span>
             </p>
           </CardContent>
         </Card>
