@@ -24,31 +24,74 @@ export default function CVWebsite() {
   //   setIsPrint(window?.matchMedia('print').matches)
   //   }
   // }, [])
-  const skills = [
-    "React.js, Three.js, R3F",
-    "Node.js, Deno",
-    "Next.js",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "Tailwindcss",
-    "(framer) motion",
-    "WebAPIs",
-    "Accessibility",
-    "Cyber Security",
-    "MongoDB, Mongoose",
-    "Rust, Bevy",
-    "UI, UX Design",
-    "Bash,Shell, CLI scripting",
-    "AWS, DevOps, CI, CD",
-    "Perseverance",
-    "Autonomy"
-  ]
-const styles = {
-  paragraphA: "text-gray-700 leading-relaxed flex-grow",
-  paragraphB: "text-gray-850 leading-relaxed flex-grow"
-}
+  const FE = "Front-End"
+  const FS = "Full-Stack"
+  const BE = "Back-End"
+  const SS = "Soft Skills"
+  const AT = "Automated Testing"
+  // const SKILL_LABELS = [FE, FS, BE, SS, AT]
+  const skills = ([
+    // {label: FE,
+    //   value: "React.js"},
+    [
+      FE, "Three.js"
+    ],
+    [
+      FE,
+      "react-three-fiber"
+    ],
+    [BE, "Node.js"],
+    [BE, "Deno"],
+    [FS, "Next.js"],
+    [FE, "HTML"],
+    [FE, "CSS"],
+    [FS, "JavaScript"],
+    [FS, "TypeScript"],
+    [FE, "Tailwindcss"],
+    [FE, "(framer) motion"],
+    [FE, "WebAPIs"],
+    [FE, "Accessibility"],
+    [FS, "Cyber Security"],
+    [BE, "MongoDB"],
+    [BE, "Mongoose ORM"],
+    [BE, "DocumentDB"],
+    [FS, "Rust + WASM"],
+    [FE, "Bevy"],
+    [FE, "UI/UX Design"],
+    [BE, "Bash, Shell, Terminal, PowerShell, Command Line Interfaces"],
+    [BE, "AWS"],
+    [BE, "DevOps"],
+    [BE, "Docker"],
+    [BE, "Github Actions"],
+    [BE, "CI/CD"],
+    [AT, "Mocha"],
+    [AT, "Jest"],
+    [AT, "Bun"],
+    [AT, "Cypress.js", ],
+    [AT, "Puppeteer"],
+    [AT, "Playwright"],
+    [SS, "Perseverance"],
+    [SS, "Autonomy"],
+    [SS, "Friendliness"]
+  ]);
+
+  const groupedSkills = skills.reduce((acc, [Key, Value]) => {
+    return {
+      ...acc,
+      [Key]: {
+        label: Key,
+        values: [...(acc?.[Key]?.values || []), Value]
+      }
+    }
+  }, {} as { [key: string]: { values: string[]; label: string }})
+  // Map.groupBy(skills, ([groupLabel, value]) => {
+  //   return SKILL_LABELS.includes(groupLabel) ? {key: groupLabel} : {key: value}
+  // })
+  console.log('groupedSkills:', groupedSkills)
+  const styles = {
+    paragraphA: "text-gray-700 leading-relaxed flex-grow",
+    paragraphB: "text-gray-850 leading-relaxed flex-grow"
+  }
   const workExperience = [
     {
       title: "Director / Lead Web Engineer",
@@ -57,21 +100,21 @@ const styles = {
       location: "Remote, UK",
       description:
         <>
-<p className={styles.paragraphA}>I collaborate closely with clients, primarily small independent startups,
-to bring their ideas to life.</p>
-<p className={styles.paragraphB}>Using my broad yet deep skill-set in programming and software engineering, I often utilise specific AI tools to enhance my work.</p>
-<p className={styles.paragraphA}>I solve problems daily, which results in engaging, visually immersive browser and web experiences tailored to their vision.</p>
-<p className={styles.paragraphB}>For example in 2020 I built <a href="https://kirkwhayman.com" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  https://kirkwhayman.com
-                </a> which won 5+ SOTD (Site of the Day) awards on awwwards.com</p>
-    </>,
+          <p className={styles.paragraphA}>I collaborate closely with clients, primarily small independent startups,
+            to bring their ideas to life.</p>
+          <p className={styles.paragraphB}>Using my broad yet deep skill-set in programming and software engineering, I often utilise specific AI tools to enhance my work.</p>
+          <p className={styles.paragraphA}>I solve problems daily, which results in engaging, visually immersive browser and web experiences tailored to their vision.</p>
+          <p className={styles.paragraphB}>For example in 2020 I built <a href="https://kirkwhayman.com" target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="h-4 w-4 mr-2" />
+            https://kirkwhayman.com
+          </a> which won 5+ SOTD (Site of the Day) awards on awwwards.com</p>
+        </>,
       logo: MasslessLogo,
       logoAlt: "MASSLESS LTD. Logo",
       companyLink: "https://www.massless.ltd/",
       logoStyle: "max-w-full h-auto",
-      width: 939/3,
-      height: 119/3,
+      width: 939 / 3,
+      height: 119 / 3,
     },
     {
       title: "Front-end Engineer",
@@ -79,9 +122,9 @@ to bring their ideas to life.</p>
       period: "March 2023 - November 2023",
       location: "Remote",
       description: <>
-<p className={styles.paragraphA}>Working with Next.js, GraphQL, Storybook, amongst other technologies, I solved a multitude of problems as a Front-end engineer.</p>
-<p className={styles.paragraphB}>I drove development forward through solving innumerable tasks myself and communicating with relevant colleagues to get blocking tasks unblocked, and helped other engineers with their tasks.</p>
-    </>,
+        <p className={styles.paragraphA}>Working with Next.js, GraphQL, Storybook, amongst other technologies, I solved a multitude of problems as a Front-end engineer.</p>
+        <p className={styles.paragraphB}>I drove development forward through solving innumerable tasks myself and communicating with relevant colleagues to get blocking tasks unblocked, and helped other engineers with their tasks.</p>
+      </>,
       logo: TravelLocalLogo,
       logoAlt: "TravelLocal Logo",
       companyLink: "https://www.travellocal.com/",
@@ -94,23 +137,23 @@ to bring their ideas to life.</p>
       company: "DRPG",
       period: "2 years",
       location: "Remote",
-      description:<>
-<p className={styles.paragraphA}>I debugged and optimised a 3D web app, a winter wonderland celebrating 40 years of DRPG, taking the FPS (Frames Per Second) on smartphone devices from 2-3 FPS to 30-60 FPS. I also implemented animated falling snow flakes into the wintery scene, using Three.js Points.</p>
-<p className={styles.paragraphB}>I developed the Jaguar C-Type customiser tool as a static site written in React.js. Jaguar received customers for the C-Type continuation via the customiser app.</p>
-</>,
+      description: <>
+        <p className={styles.paragraphA}>I debugged and optimised a 3D web app, a winter wonderland celebrating 40 years of DRPG, taking the FPS (Frames Per Second) on smartphone devices from 2-3 FPS to 30-60 FPS. I also implemented animated falling snow flakes into the wintery scene, using Three.js Points.</p>
+        <p className={styles.paragraphB}>I developed the Jaguar C-Type customiser tool as a static site written in React.js. Jaguar received customers for the C-Type continuation via the customiser app.</p>
+      </>,
       logo: DrpgLogo,
       logoAlt: "DRPG Logo",
       companyLink: "https://www.drpgroup.com/",
       logoStyle: "w-full filter invert", // Apply invert filter
-      width: 974/3,
-      height: 188/3,
+      width: 974 / 3,
+      height: 188 / 3,
     },
     {
       title: "Frontend Developer",
       company: "Zengenti Ltd.",
       period: "",
       location: "In house - Ludlow countryside",
-      description:<>
+      description: <>
         <p className={styles.paragraphA}>Here I worked diligently in squads of designers and developers to produce over 4 elegant yet functional websites for various UK based Universities and Councils.</p>
         <p className={styles.paragraphB}>I debugged over 4 React/Redux + Angular CMS based website codebases and improved the quality of the front-end codebases, including using ARIA attribute values in JSX, and taking care to ensure the UI worked properly for people with accessibility considerations such as people with colour-blindness.</p>
       </>,
@@ -118,15 +161,15 @@ to bring their ideas to life.</p>
       logoAlt: "Zengenti Ltd. Logo",
       companyLink: "https://zengenti.com/",
       logoStyle: "filter invert", // Apply invert filter
-      width: 175*1.5,
-      height: 55*1.5
+      width: 175 * 1.5,
+      height: 55 * 1.5
     },
     {
       title: "Programmer",
       company: "Express KCS",
       period: "",
       location: "In house - Milton Keynes countryside",
-      description:<>
+      description: <>
         <p className={styles.paragraphA}>This was my first time working in a small team of designers and developers, where I also learnt how to use JIRA and Git for daily use.</p>
         <p className={styles.paragraphB}>I implemented a modular i18n solution into the React codebase, using Locize for translators, and wrote lots of mocha tests.</p>
       </>,
@@ -153,7 +196,7 @@ to bring their ideas to life.</p>
           I solved a wide variety of problems for over 15+ clients and strengthened my skills in web and mobile development.
         </p>
         <p className={styles.paragraphB}>
-           My highlight experience was developing a Mind Mapping web application implementation for one of my clients, and optimising it so it worked responsively on smartphone, tablet, laptop and desktop devices.
+          My highlight experience was developing a Mind Mapping web application implementation for one of my clients, and optimising it so it worked responsively on smartphone, tablet, laptop and desktop devices.
         </p>
       </>),
       logo: BreakItImage, // No specific logo for freelance
@@ -258,11 +301,16 @@ to bring their ideas to life.</p>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <Badge key={skill} variant="secondary" className="text-sm">
+              {Object.entries(groupedSkills).map(([skillLabel, { values }]) => {
+                return <>
+                <h3 className="font-bold">{skillLabel}</h3>
+                {values.map(skill => {
+                return <Badge key={skill} variant="secondary" className="text-sm">
                   {skill}
                 </Badge>
-              ))}
+              })}
+                </>
+              })}
             </div>
           </CardContent>
         </Card>
@@ -370,20 +418,20 @@ to bring their ideas to life.</p>
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
-                <Image
-                  src={CodeyImage || "/placeholder.svg"}
-                  className="max-w-full h-auto rounded-xl shadow-lg"
-                  alt="Codey the code challenge generator bot"
-                  width={250}
-                  height={250}
-                />
+                  <Image
+                    src={CodeyImage || "/placeholder.svg"}
+                    className="max-w-full h-auto rounded-xl shadow-lg"
+                    alt="Codey the code challenge generator bot"
+                    width={250}
+                    height={250}
+                  />
                 </a>
               </div>
             </div>
             <Separator className="my-4" />
             <p className="text-gray-700">
               In my free time you{"'"}ll often find me either going for a walk outside, or indoors coding. I also created{" "}
-              <strong><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Bytey the AI challenge generator</a></strong>, found at <ExternalLink className="h-4 w-4 float-left"/><span><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://learn-with-ai-two.vercel.app</a></span>
+              <strong><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Bytey the AI challenge generator</a></strong>, found at <ExternalLink className="h-4 w-4 float-left" /><span><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://learn-with-ai-two.vercel.app</a></span>
             </p>
           </CardContent>
         </Card>
