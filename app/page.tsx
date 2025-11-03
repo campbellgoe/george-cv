@@ -301,10 +301,10 @@ to bring their ideas to life.</p>
                     )}
                   </div>
                 </div>
-                <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="flex flex-row items-start gap-4">
                   {job.description}
                   {job.logo && (
-                    <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center md:justify-end items-center">
+                    <div className="print:hidden flex-shrink-0 w-full md:w-1/3 flex justify-center md:justify-end items-center">
                       <a href={job.companyLink} target="_blank" rel="noopener noreferrer">
                         <Image
                           src={job.logo || "/placeholder.svg"}
