@@ -75,15 +75,31 @@ export default function CVWebsite() {
     [SS, "Friendliness"]
   ]);
 
+  const colours = {
+    // red
+    [FE]: "bg-[#ffbbbb55]",
+    
+    // orange
+    [FS]: "bg-[#af7a5255]",
+    // yellow
+    [BE]: "bg-[#ffffbb55]",
+    // green
+    [SS]: "bg-[#99ff9955]",
+    //blue
+    [AT]: "bg-[#6868ac55]"
+  }
+
   const groupedSkills = skills.reduce((acc, [Key, Value]) => {
     return {
       ...acc,
       [Key]: {
         label: Key,
-        values: [...(acc?.[Key]?.values || []), Value]
+        values: [...(acc?.[Key]?.values || []), Value],
+        // @ts-ignore
+        colour: colours[Key]
       }
     }
-  }, {} as { [key: string]: { values: string[]; label: string }})
+  }, {} as { [key: string]: { values: string[]; label: string; colour: string }})
   // Map.groupBy(skills, ([groupLabel, value]) => {
   //   return SKILL_LABELS.includes(groupLabel) ? {key: groupLabel} : {key: value}
   // })
@@ -154,8 +170,8 @@ export default function CVWebsite() {
       period: "",
       location: "In house - Ludlow countryside",
       description: <>
-        <p className={styles.paragraphA}>Here I worked diligently in squads of designers and developers to produce over 4 elegant yet functional websites for various UK based Universities and Councils.</p>
-        <p className={styles.paragraphB}>I debugged over 4 React/Redux + Angular CMS based website codebases and improved the quality of the front-end codebases, including using ARIA attribute values in JSX, and taking care to ensure the UI worked properly for people with accessibility considerations such as people with colour-blindness.</p>
+        <p className={styles.paragraphA}>Here I worked diligently in squads of designers and developers to produce a number of elegant yet functional websites for various UK based Universities and Councils.</p>
+        <p className={styles.paragraphB}>I debugged and developed a number of React/Redux + Angular CMS based website codebases and improved the quality of the front-end codebases, including using ARIA attribute values in JSX, and taking care to ensure the UI worked properly for people with accessibility considerations such as people with colour-blindness.</p>
       </>,
       logo: ZengentiLogo,
       logoAlt: "Zengenti Ltd. Logo",
@@ -244,6 +260,7 @@ export default function CVWebsite() {
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">George O. E. Campbell{"'"}s CV</h1>
               <p className="text-xl text-gray-600 mb-4">Adaptable, reliable problem solver</p>
+              <p className="font-bold text-gray-900 mb-2">I'm a Software Engineer and Director at MASSLESS LTD. - I'm best at problem solving, particularly on the Front-End, yet I'm capable of Back-End and Full-Stack 🧑‍💻🧮☕.</p>
               <p className="text-gray-700 max-w-2xl">
                 Self-taught, highly adaptable individual. When it comes to overcoming problems that matter, such as
                 understanding the problem and utilising UI/UX Design thinking, what we do as software engineers and
@@ -301,11 +318,11 @@ export default function CVWebsite() {
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2">
-              {Object.entries(groupedSkills).map(([skillLabel, { values }]) => {
+              {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => {
                 return <>
-                <h3 className="font-bold">{skillLabel}</h3>
+                <div className={"h-2 w-2 rounded-full "+colour}></div><h3 className="font-bold">{skillLabel}</h3>
                 {values.map(skill => {
-                return <Badge key={skill} variant="secondary" className="text-sm">
+                return <Badge key={skill} variant="secondary" className={"text-sm "+colour}>
                   {skill}
                 </Badge>
               })}
