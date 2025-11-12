@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, ExternalLink, MapPin, Calendar, Building } from "lucide-react"
 import Image from "next/image"
+import { Fragment } from "react";
 
 // Import images
 const TravelLocalLogo = "/images/travellocal-logo.svg"
@@ -319,14 +320,14 @@ export default function CVWebsite() {
           <CardContent>
             <div className="flex flex-wrap gap-2">
               {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => {
-                return <>
+                return <Fragment key={skillLabel}>
                 <div className={"h-2 w-2 rounded-full "+colour}></div><h3 className="font-bold">{skillLabel}</h3>
                 {values.map(skill => {
                 return <Badge key={skill} variant="secondary" className={"text-sm "+colour}>
                   {skill}
                 </Badge>
               })}
-                </>
+                </Fragment>
               })}
             </div>
           </CardContent>
@@ -454,7 +455,7 @@ export default function CVWebsite() {
         </Card>
 
         {/* Contact CTA */}
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 s">
+        <Card className="print:hidden bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 s">
           <CardContent className="text-center py-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Let{"'"}s Work Together</h2>
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
