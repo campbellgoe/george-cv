@@ -32,6 +32,10 @@ export default function CVWebsite() {
   const AT = "Automated Testing"
   // const SKILL_LABELS = [FE, FS, BE, SS, AT]
   const skills = ([
+    [
+      FE,
+      "React.js"
+    ],
     // {label: FE,
     //   value: "React.js"},
     [
@@ -76,18 +80,18 @@ export default function CVWebsite() {
     [SS, "Friendliness"]
   ]);
 
-  const colours = {
+  const colours: {[key: string]: string} = {
     // red
-    [FE]: "bg-[#ffbbbb55]",
+    [FE]: "bg-stone-100",
     
     // orange
-    [FS]: "bg-[#af7a5255]",
+    [FS]: "bg-stone-100",
     // yellow
-    [BE]: "bg-[#ffffbb55]",
+    [BE]: "bg-stone-100",
     // green
-    [SS]: "bg-[#99ff9955]",
+    [SS]: "bg-stone-100",
     //blue
-    [AT]: "bg-[#6868ac55]"
+    [AT]: "bg-stone-100"
   }
 
   const groupedSkills = skills.reduce((acc, [Key, Value]) => {
@@ -96,7 +100,6 @@ export default function CVWebsite() {
       [Key]: {
         label: Key,
         values: [...(acc?.[Key]?.values || []), Value],
-        // @ts-ignore
         colour: colours[Key]
       }
     }
@@ -104,7 +107,7 @@ export default function CVWebsite() {
   // Map.groupBy(skills, ([groupLabel, value]) => {
   //   return SKILL_LABELS.includes(groupLabel) ? {key: groupLabel} : {key: value}
   // })
-  console.log('groupedSkills:', groupedSkills)
+  // console.log('groupedSkills:', groupedSkills)
   const styles = {
     paragraphA: "text-gray-700 leading-relaxed flex-grow",
     paragraphB: "text-gray-850 leading-relaxed flex-grow"
@@ -261,12 +264,12 @@ export default function CVWebsite() {
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">George O. E. Campbell{"'"}s CV</h1>
               <p className="text-xl text-gray-600 mb-4">Adaptable, reliable problem solver</p>
-              <p className="font-bold text-gray-900 mb-2">I'm a Software Engineer and Director at MASSLESS LTD. - I'm best at problem solving, particularly on the Front-End, yet I'm capable of Back-End and Full-Stack 🧑‍💻🧮☕.</p>
+              <p className="font-bold text-gray-900 mb-2">{"I'm a Software Engineer and Director at MASSLESS LTD. - I'm best at Front-End, and capable of Back-End - so I'm a FE leaning Full-Stack dev 🧑‍💻🧮☕."}</p>
               <p className="text-gray-700 max-w-2xl">
-                Self-taught, highly adaptable individual. When it comes to overcoming problems that matter, such as
-                understanding the problem and utilising UI/UX Design thinking, what we do as software engineers and
-                designers, affects and matters to people. That{"'"}s why I care about developing and designing quality
-                software, without dark patterns.
+                {`Self-taught, highly adaptable individual. When it comes to overcoming problems that matter, such as
+understanding the problem and utilising UI/UX Design thinking, what we do as software engineers and
+designers, affects and matters to people. That's why I care about developing and designing quality
+software, without dark patterns.`}
               </p>
             </div>
             <div className="flex flex-col gap-3 text-sm">
@@ -274,6 +277,13 @@ export default function CVWebsite() {
                 <Mail className="h-4 w-4 text-gray-500" />
                 <a href="mailto:george.campbell@massless.ltd" className="text-blue-600 hover:underline">
                   george.campbell@massless.ltd
+                </a>
+                
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-gray-500" />
+                <a href="mailto:campbell.goe@gmail.com" className="text-blue-600 hover:underline">
+                  campbell.goe@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -321,7 +331,7 @@ export default function CVWebsite() {
             <div className="flex flex-wrap gap-2">
               {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => {
                 return <Fragment key={skillLabel}>
-                <div className={"h-2 w-2 rounded-full "+colour}></div><h3 className="font-bold">{skillLabel}</h3>
+                <h3 className="font-bold bg-stone-150">{skillLabel}</h3>
                 {values.map(skill => {
                 return <Badge key={skill} variant="secondary" className={"text-sm "+colour}>
                   {skill}
