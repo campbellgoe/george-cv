@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, ExternalLink, MapPin, Calendar, Building } from "lucide-react"
 import Image from "next/image"
-import { Fragment } from "react";
 
 // Import images
 const TravelLocalLogo = "/images/travellocal-logo.svg"
@@ -28,30 +27,36 @@ export default function CVWebsite() {
   const FE = "Front-End"
   const FS = "Full-Stack"
   const BE = "Back-End"
+  const FW = "Frameworks + Libraries"
+  const LANG = "Languages"
+  const CLI = "CLIs"
+  const OS = "Operating Systems"
   const SS = "Soft Skills"
   const AT = "Automated Testing"
   // const SKILL_LABELS = [FE, FS, BE, SS, AT]
   const skills = ([
     [
-      FE,
+      FW,
       "React.js"
     ],
     // {label: FE,
     //   value: "React.js"},
     [
-      FE, "Three.js"
+      FW, "Three.js"
     ],
     [
-      FE,
+      FW,
       "react-three-fiber"
     ],
     [BE, "Node.js"],
     [BE, "Deno"],
-    [FS, "Next.js"],
-    [FE, "HTML"],
-    [FE, "CSS"],
-    [FS, "JavaScript"],
-    [FS, "TypeScript"],
+    [FW, "Next.js"],
+    [LANG, "HTML"],
+    [LANG, "CSS"],
+    [LANG, "JavaScript"],
+    [LANG, "TypeScript"],
+    [LANG, "Rust"],
+    [LANG, "Python"],
     [FE, "Tailwindcss"],
     [FE, "(framer) motion"],
     [FE, "WebAPIs"],
@@ -60,11 +65,19 @@ export default function CVWebsite() {
     [BE, "MongoDB"],
     [BE, "Mongoose ORM"],
     [BE, "DocumentDB"],
-    [FS, "Rust + WASM"],
+    [FS, "Amplify"],
+    [BE, "DynamoDB"],
     [FE, "Bevy"],
     [FE, "UI/UX Design"],
-    [BE, "Bash, Shell, Terminal, PowerShell, Command Line Interfaces"],
-    [BE, "AWS"],
+    [CLI, "Bash scripting"],
+    [CLI, "Terminal"],
+    [CLI, "Powershell"],
+    [CLI, "CLIs"],
+    [CLI, "Command Prompt"],
+    [OS, "MS Windows"],
+    [OS, "Linux ubuntu/mint"],
+    [OS, "MacOS"],
+    [FS, "AWS"],
     [BE, "DevOps"],
     [BE, "Docker"],
     [BE, "Github Actions"],
@@ -77,7 +90,8 @@ export default function CVWebsite() {
     [AT, "Playwright"],
     [SS, "Perseverance"],
     [SS, "Autonomy"],
-    [SS, "Friendliness"]
+    [SS, "Friendliness"],
+    [SS, "Enthusiasm"],
   ]);
 
   const colours: {[key: string]: string} = {
@@ -116,7 +130,7 @@ export default function CVWebsite() {
     {
       title: "Director / Lead Web Engineer",
       company: "MASSLESS LTD.",
-      period: "May 2021 - Present",
+      period: "May 2021 - Present (~5 years)",
       location: "Remote, UK",
       description:
         <>
@@ -139,7 +153,7 @@ export default function CVWebsite() {
     {
       title: "Front-end Engineer",
       company: "TravelLocal",
-      period: "March 2023 - November 2023",
+      period: "March 2023 - November 2023 (9 months)",
       location: "Remote",
       description: <>
         <p className={styles.paragraphA}>Working with Next.js, GraphQL, Storybook, amongst other technologies, I solved a multitude of problems as a Front-end engineer.</p>
@@ -155,7 +169,7 @@ export default function CVWebsite() {
     {
       title: "Software Engineer",
       company: "DRPG",
-      period: "2 years",
+      period: "October 2020 to August 2022 (1 year 11 months)",
       location: "Remote",
       description: <>
         <p className={styles.paragraphA}>I debugged and optimised a 3D web app, a winter wonderland celebrating 40 years of DRPG, taking the FPS (Frames Per Second) on smartphone devices from 2-3 FPS to 30-60 FPS. I also implemented animated falling snow flakes into the wintery scene, using Three.js Points.</p>
@@ -171,11 +185,11 @@ export default function CVWebsite() {
     {
       title: "Frontend Developer",
       company: "Zengenti Ltd.",
-      period: "",
+      period: "April 2019 - April 2020 (1 year)",
       location: "In house - Ludlow countryside",
       description: <>
         <p className={styles.paragraphA}>Here I worked diligently in squads of designers and developers to produce a number of elegant yet functional websites for various UK based Universities and Councils.</p>
-        <p className={styles.paragraphB}>I debugged and developed a number of React/Redux + Angular CMS based website codebases and improved the quality of the front-end codebases, including using ARIA attribute values in JSX, and taking care to ensure the UI worked properly for people with accessibility considerations such as people with colour-blindness.</p>
+        <p className={styles.paragraphB}>I debugged and developed a number of React/Redux + Angular CMS based website codebases and improved the quality of the front-end codebases, taking care to ensure the UI worked properly for screen-readers and people with accessibility considerations such as people with colour-blindness.</p>
       </>,
       logo: ZengentiLogo,
       logoAlt: "Zengenti Ltd. Logo",
@@ -187,7 +201,7 @@ export default function CVWebsite() {
     {
       title: "Programmer",
       company: "Express KCS",
-      period: "",
+      period: "June 2018 - April 2019 (11 months)",
       location: "In house - Milton Keynes countryside",
       description: <>
         <p className={styles.paragraphA}>This was my first time working in a small team of designers and developers, where I also learnt how to use JIRA and Git for daily use.</p>
@@ -203,7 +217,7 @@ export default function CVWebsite() {
     {
       title: "Sole trader - Freelance - HTML, CSS, JS Programmer.",
       company: "George O. E. Campbell",
-      period: "Started 2016",
+      period: "2016 - June 2018 (2 years)",
       location: "Remote",
       description: (<>
         <p className={styles.paragraphA}>
@@ -230,19 +244,19 @@ export default function CVWebsite() {
 
   const education = [
     {
-      institution: "Herefordshire, Ludlow and North Shropshire College (HLNSC)",
-      qualification: "Computing & Cyber Security",
-      period: "",
+      institution: "Herefordshire, Ludlow and North Shropshire College (HLNSC), UK",
+      qualification: "Studying Computing & Cyber Security",
+      period: "2024 - 2025",
     },
     {
-      institution: "University of Portsmouth, UK",
+      institution: "University of Portsmouth (UoP), UK",
       qualification: "Diploma of Higher Education. Human Geography.",
-      period: "",
+      period: "2014 - 2017",
     },
     {
-      institution: "Hereford Sixthform College",
+      institution: "Hereford Sixthform College, UK",
       qualification: "A Levels: English Language, Computing, Geography.",
-      period: "",
+      period: "2011 - 2013",
     },
   ]
 
@@ -250,9 +264,10 @@ export default function CVWebsite() {
     "Wall climbing / bouldering",
     "Swimming, walking, bicycling",
     "Table tennis / ping pong",
-    "Cooking meals, from Daal Curry to Fish n Chips",
+    "Cooking tasty healthy meals",
     "Gaming (Counter Strike, TrackMania, GTA, Don't Starve, DayZ)",
     "Coding in free time",
+    "Learning languages"
   ]
 
   return (
@@ -262,14 +277,11 @@ export default function CVWebsite() {
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">George O. E. Campbell{"'"}s CV</h1>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2 w-[120%]">George Oscar Eugene Campbell{"'"}s CV</h1>
               <p className="text-xl text-gray-600 mb-4">Adaptable, reliable problem solver</p>
-              <p className="font-bold text-gray-900 mb-2">{"I'm a Software Engineer and Director at MASSLESS LTD. - I'm best at Front-End, and capable of Back-End - so I'm a FE leaning Full-Stack dev 🧑‍💻🧮☕."}</p>
+              <p className="font-bold text-gray-900 mb-2">{"I'm a Software Engineer and Director at MASSLESS LTD. I solve problems an LLM can't ☕🧑‍💻."}</p>
               <p className="text-gray-700 max-w-2xl">
-                {`Self-taught, highly adaptable individual. When it comes to overcoming problems that matter, such as
-understanding the problem and utilising UI/UX Design thinking, what we do as software engineers and
-designers, affects and matters to people. That's why I care about developing and designing quality
-software, without dark patterns.`}
+                {`Self-taught, although I've been learning on the job too! Highly motivated at overcoming problems that matter, and understanding the theory underlying the problems I face as an engineer and designer.`}
               </p>
             </div>
             <div className="flex flex-col gap-3 text-sm">
@@ -325,21 +337,21 @@ software, without dark patterns.`}
               <div className="h-2 w-2 bg-blue-600 rounded-full"></div>
               Technical Skills
             </CardTitle>
-            <CardDescription>Best at front-end, capable of back-end</CardDescription>
+            <CardDescription className="pl-[18px]">Best at front-end, capable of back-end</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-2 pl-[20px]">
               {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => {
-                return <Fragment key={skillLabel}>
-                <h3 className="font-bold bg-stone-150">{skillLabel}</h3>
+                return <li key={skillLabel} className="list-outside list-disc">
+                <h3 className="font-bold bg-stone-150 inline-block">{skillLabel}</h3>
                 {values.map(skill => {
-                return <Badge key={skill} variant="secondary" className={"text-sm "+colour}>
+                return <Badge key={skill} variant="secondary" className={"m-1 text-sm "+colour}>
                   {skill}
                 </Badge>
               })}
-                </Fragment>
+                </li>
               })}
-            </div>
+            </ul>
           </CardContent>
         </Card>
 
@@ -493,7 +505,7 @@ software, without dark patterns.`}
       {/* Footer */}
       <footer className="bg-white border-t mt-16">
         <div className="max-w-4xl mx-auto px-6 py-8 text-center text-gray-600">
-          <p>2025 George O. E. Campbell. </p>
+          <p>2026 George O. E. Campbell. </p>
         </div>
       </footer>
     </div>
