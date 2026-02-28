@@ -116,7 +116,7 @@ export default function CVWebsite() {
     {
       title: "Director / Lead Web Engineer",
       company: "MASSLESS LTD.",
-      period: "May 2021 - Present",
+      period: "May 2021 - Present (~5 years)",
       location: "Remote, UK",
       description:
         <>
@@ -139,7 +139,7 @@ export default function CVWebsite() {
     {
       title: "Front-end Engineer",
       company: "TravelLocal",
-      period: "March 2023 - November 2023",
+      period: "March 2023 - November 2023 (9 months)",
       location: "Remote",
       description: <>
         <p className={styles.paragraphA}>Working with Next.js, GraphQL, Storybook, amongst other technologies, I solved a multitude of problems as a Front-end engineer.</p>
@@ -155,7 +155,7 @@ export default function CVWebsite() {
     {
       title: "Software Engineer",
       company: "DRPG",
-      period: "2 years",
+      period: "October 2020 to August 2022 (1 year 11 months)",
       location: "Remote",
       description: <>
         <p className={styles.paragraphA}>I debugged and optimised a 3D web app, a winter wonderland celebrating 40 years of DRPG, taking the FPS (Frames Per Second) on smartphone devices from 2-3 FPS to 30-60 FPS. I also implemented animated falling snow flakes into the wintery scene, using Three.js Points.</p>
@@ -171,7 +171,7 @@ export default function CVWebsite() {
     {
       title: "Frontend Developer",
       company: "Zengenti Ltd.",
-      period: "",
+      period: "April 2019 - April 2020 (1 year)",
       location: "In house - Ludlow countryside",
       description: <>
         <p className={styles.paragraphA}>Here I worked diligently in squads of designers and developers to produce a number of elegant yet functional websites for various UK based Universities and Councils.</p>
@@ -187,7 +187,7 @@ export default function CVWebsite() {
     {
       title: "Programmer",
       company: "Express KCS",
-      period: "",
+      period: "June 2018 - April 2019 (11 months)",
       location: "In house - Milton Keynes countryside",
       description: <>
         <p className={styles.paragraphA}>This was my first time working in a small team of designers and developers, where I also learnt how to use JIRA and Git for daily use.</p>
@@ -203,7 +203,7 @@ export default function CVWebsite() {
     {
       title: "Sole trader - Freelance - HTML, CSS, JS Programmer.",
       company: "George O. E. Campbell",
-      period: "Started 2016",
+      period: "2016 - June 2018 (2 years)",
       location: "Remote",
       description: (<>
         <p className={styles.paragraphA}>
@@ -230,19 +230,19 @@ export default function CVWebsite() {
 
   const education = [
     {
-      institution: "Herefordshire, Ludlow and North Shropshire College (HLNSC)",
-      qualification: "Computing & Cyber Security",
-      period: "",
+      institution: "Herefordshire, Ludlow and North Shropshire College (HLNSC), UK",
+      qualification: "Studying Computing & Cyber Security",
+      period: "2024 - 2025",
     },
     {
-      institution: "University of Portsmouth, UK",
+      institution: "University of Portsmouth (UoP), UK",
       qualification: "Diploma of Higher Education. Human Geography.",
-      period: "",
+      period: "2014 - 2017",
     },
     {
-      institution: "Hereford Sixthform College",
+      institution: "Hereford Sixthform College, UK",
       qualification: "A Levels: English Language, Computing, Geography.",
-      period: "",
+      period: "2011 - 2013",
     },
   ]
 
@@ -250,9 +250,10 @@ export default function CVWebsite() {
     "Wall climbing / bouldering",
     "Swimming, walking, bicycling",
     "Table tennis / ping pong",
-    "Cooking meals, from Daal Curry to Fish n Chips",
+    "Cooking tasty healthy meals",
     "Gaming (Counter Strike, TrackMania, GTA, Don't Starve, DayZ)",
     "Coding in free time",
+    "Learning languages"
   ]
 
   return (
