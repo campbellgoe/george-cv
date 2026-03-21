@@ -2,7 +2,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+// import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, ExternalLink, MapPin, Calendar, Building } from "lucide-react"
 import Image from "next/image"
 
@@ -12,7 +12,7 @@ const MasslessLogo = "/images/massless-ltd-website-logo.webp"
 const ZengentiLogo = "/images/logos/zengenti.png"
 const DrpgLogo = "/images/logos/DRPG_40_AGENCY.svg"
 const EKCSLogo = "/images/logos/ekcs.png"
-const CodeyImage = "/images/codey-bitey-bugy.webp"
+// const CodeyImage = "/images/codey-bitey-bugy.webp"
 
 const BreakItImage = "/images/breakit-webgl.png"
 
@@ -85,19 +85,22 @@ export default function CVWebsite() {
     [AT, "Mocha"],
     [AT, "Jest"],
     [AT, "Bun"],
-    [AT, "Cypress.js", ],
+    [AT, "Cypress.js",],
     [AT, "Puppeteer"],
     [AT, "Playwright"],
     [SS, "Perseverance"],
     [SS, "Autonomy"],
     [SS, "Friendliness"],
     [SS, "Enthusiasm"],
+    [SS, "Communication"],
+    [SS, "Leadership"],
+    [SS, "Empathy"]
   ]);
 
-  const colours: {[key: string]: string} = {
+  const colours: { [key: string]: string } = {
     // red
     [FE]: "bg-stone-100",
-    
+
     // orange
     [FS]: "bg-stone-100",
     // yellow
@@ -117,7 +120,7 @@ export default function CVWebsite() {
         colour: colours[Key]
       }
     }
-  }, {} as { [key: string]: { values: string[]; label: string; colour: string }})
+  }, {} as { [key: string]: { values: string[]; label: string; colour: string } })
   // Map.groupBy(skills, ([groupLabel, value]) => {
   //   return SKILL_LABELS.includes(groupLabel) ? {key: groupLabel} : {key: value}
   // })
@@ -128,27 +131,48 @@ export default function CVWebsite() {
   }
   const workExperience = [
     {
-      title: "Director / Lead Web Engineer",
+      title: "Director + Software Engineer",
       company: "MASSLESS LTD.",
-      period: "May 2021 - Present (~5 years)",
+      period: "Freelancing since 2016. Founded MASSLESS LTD in May 2021.",
       location: "Remote, UK",
       description:
         <>
-          <p className={styles.paragraphA}>I collaborate closely with clients, primarily small independent startups,
-            to bring their ideas to life.</p>
-          <p className={styles.paragraphB}>Using my broad yet deep skill-set in programming and software engineering, I often utilise specific AI tools to enhance my work.</p>
-          <p className={styles.paragraphA}>I solve problems daily, which results in engaging, visually immersive browser and web experiences tailored to their vision.</p>
-          <p className={styles.paragraphB}>For example in 2020 I built <a href="https://kirkwhayman.com" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-4 w-4 mr-2" />
-            https://kirkwhayman.com
-          </a> which won 5+ SOTD (Site of the Day) awards on awwwards.com</p>
+          <div>
+            <p className={styles.paragraphA}>
+              I utilise my problem solving abilities, technical and creative and communication and leadership skills to build bespoke software solutions.
+            </p>
+            <p className={styles.paragraphB}>
+              I communicated professionally and effectively with 30+ smaller start-ups and individual professionals to provide invaluable digital experiences.
+            </p>
+            <p className={styles.paragraphA}>For a recent client in 2025/26 I implemented cloud synchronisation via AWS Amplify for the backend with DynamoDB for the database, and generative AI for automatic cyber security threat modelling.</p>
+          </div>
+          <div>
+
+            <p className={styles.paragraphA}>I worked from junior level, mid then at senior level, including experiences as a team leader, to bring projects from conception to launch.</p>
+            <p className={styles.paragraphB}>For example in 2020 I was the solo engineer for an award winning project for an independent professional who hired me for their website development needs <a href="https://kirkwhayman.com" target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="h-4 w-4 mr-2" />
+              https://kirkwhayman.com
+            </a> which won 5+ SOTD (Site of the Day) awards on awwwards.com and earned me over £12,000 across 2½ months.</p>
+            
+          </div>
+
         </>,
-      logo: MasslessLogo,
-      logoAlt: "MASSLESS LTD. Logo",
-      companyLink: "https://www.massless.ltd/",
-      logoStyle: "max-w-full h-auto",
-      width: 939 / 3,
-      height: 119 / 3,
+      logos: [{
+        logo: MasslessLogo,
+        logoAlt: "MASSLESS LTD",
+        companyLink: "https://www.massless.ltd/",
+        logoStyle: "max-w-full h-auto",
+        width: 939 / 3,
+        height: 119 / 3,
+      },
+      {
+        logo: BreakItImage,
+        logoAlt: "Break the box",
+        companyLink: "https://kirkwhayman.com",
+        logoStyle: "max-w-full h-auto",
+        width: 250,
+        height: 250
+      }]
     },
     {
       title: "Front-end Engineer",
@@ -156,15 +180,17 @@ export default function CVWebsite() {
       period: "March 2023 - November 2023 (9 months)",
       location: "Remote",
       description: <>
-        <p className={styles.paragraphA}>Working with Next.js, GraphQL, Storybook, amongst other technologies, I solved a multitude of problems as a Front-end engineer.</p>
-        <p className={styles.paragraphB}>I drove development forward through solving innumerable tasks myself and communicating with relevant colleagues to get blocking tasks unblocked, and helped other engineers with their tasks.</p>
+        <p className={styles.paragraphA}>{`This was an opportunity which strengthened my Front-End engineering abilities, and the daily asynchronous communication along with helpful feedback helped increase my professional communication skills.`}</p>
+        <p className={styles.paragraphB}>{`Utilising Next.js, React, GraphQL, Storybook and other technologies I worked on unique technical challenges, built components and pages, and wrote automated tests for the start-up - solving over 120 unique tasks and helping to overcome tasks marked as "blocked".`}</p>
       </>,
-      logo: TravelLocalLogo,
-      logoAlt: "TravelLocal Logo",
-      companyLink: "https://www.travellocal.com/",
-      logoStyle: "w-full",
-      width: 250,
-      height: 250
+      logos: [{
+        logo: TravelLocalLogo,
+        logoAlt: "TravelLocal Logo",
+        companyLink: "https://www.travellocal.com/",
+        logoStyle: "w-full",
+        width: 250,
+        height: 250
+      }]
     },
     {
       title: "Software Engineer",
@@ -172,15 +198,18 @@ export default function CVWebsite() {
       period: "October 2020 to August 2022 (1 year 11 months)",
       location: "Remote",
       description: <>
-        <p className={styles.paragraphA}>I debugged and optimised a 3D web app, a winter wonderland celebrating 40 years of DRPG, taking the FPS (Frames Per Second) on smartphone devices from 2-3 FPS to 30-60 FPS. I also implemented animated falling snow flakes into the wintery scene, using Three.js Points.</p>
-        <p className={styles.paragraphB}>I developed the Jaguar C-Type customiser tool as a static site written in React.js. Jaguar received customers for the C-Type continuation via the customiser app.</p>
+        <p className={styles.paragraphA}>I debugged and optimised a 3D web app, a winter wonderland celebrating 40 years of DRPG, taking the FPS (Frames Per Second) on smartphone devices from 2-3 FPS to 30-60 FPS. I also implemented a performant falling snow effect into the wintery scene, containing thousands of animated snow flakes.</p>
+        <p className={styles.paragraphB}>I developed the Jaguar C-Type customiser tool with support from a junior engineer. Jaguar received over 8 customers for the C-Type continuation via the customiser app. DRPG earned an estimated £48,000 for this 1½ month project based on the £1600/day statistic I was shown.</p>
+        <p className={styles.paragraphA}>I drove development on a 3D virtual events and conferencing web-app including implementing video projections onto 3D surfaces, bringing the virtual environment to life and an immersive, engaging experience.</p>
       </>,
-      logo: DrpgLogo,
-      logoAlt: "DRPG Logo",
-      companyLink: "https://www.drpgroup.com/",
-      logoStyle: "w-full filter invert", // Apply invert filter
-      width: 974 / 3,
-      height: 188 / 3,
+      logos: [{
+        logo: DrpgLogo,
+        logoAlt: "DRPG Logo",
+        companyLink: "https://www.drpgroup.com/",
+        logoStyle: "w-full filter invert", // Apply invert filter
+        width: 974 / 3,
+        height: 188 / 3,
+      }]
     },
     {
       title: "Frontend Developer",
@@ -188,15 +217,18 @@ export default function CVWebsite() {
       period: "April 2019 - April 2020 (1 year)",
       location: "In house - Ludlow countryside",
       description: <>
-        <p className={styles.paragraphA}>Here I worked diligently in squads of designers and developers to produce a number of elegant yet functional websites for various UK based Universities and Councils.</p>
-        <p className={styles.paragraphB}>I debugged and developed a number of React/Redux + Angular CMS based website codebases and improved the quality of the front-end codebases, taking care to ensure the UI worked properly for screen-readers and people with accessibility considerations such as people with colour-blindness.</p>
+        <p className={styles.paragraphA}>This was an opportunity to work together as a team of engineers and UI/UX designers on 6+ websites for various councils and universities in the UK.</p>
+        <p className={styles.paragraphB}>I informally mentored a junior developer, helping them become more independent, as they were sat next of me - and I proactively helped them get un-stuck on technical challenges.</p>
+        <p className={styles.paragraphA}>My job involved improving the quality of the react/redux, front-end codebases, taking care to ensure the UI worked properly for screen-readers and people with accessibility considerations such as people with colour-blindness.</p>
       </>,
-      logo: ZengentiLogo,
-      logoAlt: "Zengenti Ltd. Logo",
-      companyLink: "https://zengenti.com/",
-      logoStyle: "filter invert", // Apply invert filter
-      width: 175 * 1.5,
-      height: 55 * 1.5
+      logos: [{
+        logo: ZengentiLogo,
+        logoAlt: "Zengenti Ltd. Logo",
+        companyLink: "https://zengenti.com/",
+        logoStyle: "filter invert", // Apply invert filter
+        width: 175 * 1.5,
+        height: 55 * 1.5
+      }]
     },
     {
       title: "Programmer",
@@ -207,38 +239,14 @@ export default function CVWebsite() {
         <p className={styles.paragraphA}>This was my first time working in a small team of designers and developers, where I also learnt how to use JIRA and Git for daily use.</p>
         <p className={styles.paragraphB}>I implemented a modular i18n solution into the React codebase, using Locize for translators, and wrote lots of mocha tests.</p>
       </>,
-      logo: EKCSLogo,
-      logoAlt: "Express KCS Logo",
-      companyLink: "https://www.ekcs.co/",
-      logoStyle: "",
-      width: 250,
-      height: 250
-    },
-    {
-      title: "Sole trader - Freelance - HTML, CSS, JS Programmer.",
-      company: "George O. E. Campbell",
-      period: "2016 - June 2018 (2 years)",
-      location: "Remote",
-      description: (<>
-        <p className={styles.paragraphA}>
-          Around 2016 I started winning my first contracts, where I utilised my problem solving abilities and skills I had gained in HTML, CSS and JavaScript.
-        </p>
-        <p className={styles.paragraphB}>
-          I found a nack for breaking requirements down, communicating effectively, and solving relevant problems.
-        </p>
-        <p className={styles.paragraphA}>
-          I solved a wide variety of problems for over 15+ clients and strengthened my skills in web and mobile development.
-        </p>
-        <p className={styles.paragraphB}>
-          My highlight experience was developing a Mind Mapping web application implementation for one of my clients, and optimising it so it worked responsively on smartphone, tablet, laptop and desktop devices.
-        </p>
-      </>),
-      logo: BreakItImage, // No specific logo for freelance
-      logoAlt: "Break the cube",
-      companyLink: "https://kirkwhayman.com",
-      logoStyle: "max-w-full h-auto",
-      width: 250,
-      height: 250
+      logos: [{
+        logo: EKCSLogo,
+        logoAlt: "Express KCS Logo",
+        companyLink: "https://www.ekcs.co/",
+        logoStyle: "",
+        width: 250,
+        height: 250
+      }]
     },
   ]
 
@@ -261,13 +269,14 @@ export default function CVWebsite() {
   ]
 
   const hobbies = [
-    "Wall climbing / bouldering",
-    "Swimming, walking, bicycling",
-    "Table tennis / ping pong",
-    "Cooking tasty healthy meals",
+    "Wall climbing & bouldering",
+    "Visiting museums, castles & aquariums",
+    "Swimming, walking & bicycling",
+    "Badminton, table tennis & ping pong",
+    "Cooking tasty & healthy meals",
     "Gaming (Counter Strike, TrackMania, GTA, Don't Starve, DayZ)",
-    "Coding in free time",
-    "Learning languages"
+    "Creative and business side projects",
+    "Learning languages such as Spanish and Rust"
   ]
 
   return (
@@ -278,11 +287,9 @@ export default function CVWebsite() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2 w-[120%]">George Oscar Eugene Campbell{"'"}s CV</h1>
-              <p className="text-xl text-gray-600 mb-4">Adaptable, reliable problem solver</p>
-              <p className="font-bold text-gray-900 mb-2">{"I'm a Software Engineer and Director at MASSLESS LTD. I solve problems an LLM can't ☕🧑‍💻."}</p>
-              <p className="text-gray-700 max-w-2xl">
-                {`Self-taught, although I've been learning on the job too! Highly motivated at overcoming problems that matter, and understanding the theory underlying the problems I face as an engineer and designer.`}
-              </p>
+              
+              <p className="text-xl text-gray-600 mb-4">{"Software engineer and director with 5+ years building award-winning web experiences for startups, specialising in React, Next.js & Three.js, engineering resilient and performant software."}</p>
+              <p className="font-bold text-gray-900 mb-2">{"I overcome problems an LLM and vibe coding can't."}</p>
             </div>
             <div className="flex flex-col gap-3 text-sm">
               <div className="flex items-center gap-2">
@@ -290,7 +297,7 @@ export default function CVWebsite() {
                 <a href="mailto:george.campbell@massless.ltd" className="text-blue-600 hover:underline">
                   george.campbell@massless.ltd
                 </a>
-                
+
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gray-500" />
@@ -343,12 +350,12 @@ export default function CVWebsite() {
             <ul className="flex flex-wrap gap-2 pl-[20px]">
               {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => {
                 return <li key={skillLabel} className="list-outside list-disc">
-                <h3 className="font-bold bg-stone-150 inline-block">{skillLabel}</h3>
-                {values.map(skill => {
-                return <Badge key={skill} variant="secondary" className={"m-1 text-sm "+colour}>
-                  {skill}
-                </Badge>
-              })}
+                  <h3 className="font-bold bg-stone-150 inline-block">{skillLabel}</h3>
+                  {values.map(skill => {
+                    return <Badge key={skill} variant="secondary" className={"m-1 text-sm " + colour}>
+                      {skill}
+                    </Badge>
+                  })}
                 </li>
               })}
             </ul>
@@ -391,19 +398,21 @@ export default function CVWebsite() {
                 </div>
                 <div className="flex flex-row items-start gap-4">
                   {job.description}
-                  {job.logo && (
-                    <div className="print:hidden flex-shrink-0 w-full md:w-1/3 flex justify-center md:justify-end items-center">
-                      <a href={job.companyLink} target="_blank" rel="noopener noreferrer">
-                        <Image
-                          src={job.logo || "/placeholder.svg"}
-                          alt={job.logoAlt}
-                          width={job.width}
-                          height={job.height}
-                          className={`max-h-[175px] w-auto object-contain ${job.logoStyle}`}
-                        />
-                      </a>
-                    </div>
-                  )}
+                  <div className="flex flex-col gap-4 w-full md:w-1/3 justify-center md:justify-end items-center">
+                    {job.logos.map(logo => (
+                      <div key={logo.companyLink} className="print:hidden">
+                        <a href={logo.companyLink} target="_blank" rel="noopener noreferrer">
+                          <Image
+                            src={logo.logo || "/placeholder.svg"}
+                            alt={logo.logoAlt}
+                            width={logo.width}
+                            height={logo.height}
+                            className={`max-h-[175px] w-auto object-contain ${logo.logoStyle}`}
+                          />
+                        </a>
+                      </div>)
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -451,28 +460,8 @@ export default function CVWebsite() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center items-center">
-                <a
-                  href="https://learn-with-ai-two.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  <Image
-                    src={CodeyImage || "/placeholder.svg"}
-                    className="max-w-full h-auto rounded-xl shadow-lg"
-                    alt="Codey the code challenge generator bot"
-                    width={250}
-                    height={250}
-                  />
-                </a>
-              </div>
             </div>
-            <Separator className="my-4" />
-            <p className="text-gray-700">
-              In my free time you{"'"}ll often find me either going for a walk outside, or indoors coding. I also created{" "}
-              <strong><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Bytey the AI challenge generator</a></strong>, found at <ExternalLink className="h-4 w-4 float-left" /><span><a href="https://learn-with-ai-two.vercel.app" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://learn-with-ai-two.vercel.app</a></span>
-            </p>
+            
           </CardContent>
         </Card>
 
