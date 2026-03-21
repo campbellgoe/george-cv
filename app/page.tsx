@@ -2,7 +2,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+// import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, ExternalLink, MapPin, Calendar, Building } from "lucide-react"
 import Image from "next/image"
 
@@ -12,7 +12,7 @@ const MasslessLogo = "/images/massless-ltd-website-logo.webp"
 const ZengentiLogo = "/images/logos/zengenti.png"
 const DrpgLogo = "/images/logos/DRPG_40_AGENCY.svg"
 const EKCSLogo = "/images/logos/ekcs.png"
-const CodeyImage = "/images/codey-bitey-bugy.webp"
+// const CodeyImage = "/images/codey-bitey-bugy.webp"
 
 const BreakItImage = "/images/breakit-webgl.png"
 
@@ -180,8 +180,8 @@ export default function CVWebsite() {
       period: "March 2023 - November 2023 (9 months)",
       location: "Remote",
       description: <>
-        <p className={styles.paragraphA}>This was an opportunity which strengthened my Front-End engineering abilities, and the daily asynchronous communication along with helpful feedback helped increase my professional communication skills.</p>
-        <p className={styles.paragraphB}>Utilising Next.js, React, GraphQL, Storybook and other technologies I worked on unique technical challenges, built components and pages, and wrote automated tests for the start-up - solving over 120 unique tasks and helping to overcome tasks marked as "blocked".</p>
+        <p className={styles.paragraphA}>{`This was an opportunity which strengthened my Front-End engineering abilities, and the daily asynchronous communication along with helpful feedback helped increase my professional communication skills.`}</p>
+        <p className={styles.paragraphB}>{`Utilising Next.js, React, GraphQL, Storybook and other technologies I worked on unique technical challenges, built components and pages, and wrote automated tests for the start-up - solving over 120 unique tasks and helping to overcome tasks marked as "blocked".`}</p>
       </>,
       logos: [{
         logo: TravelLocalLogo,
