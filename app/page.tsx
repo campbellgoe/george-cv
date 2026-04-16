@@ -257,13 +257,18 @@ export default function CVWebsite() {
       period: "2024 - 2025",
     },
     {
+      institution: "North Lindsey College",
+      qualification: "Level 2 Certificate in Understanding Mental Health First Aid & Mental Health Advocacy in the Workplace",
+      period: "2022"
+    },
+    {
       institution: "University of Portsmouth (UoP), UK",
       qualification: "Diploma of Higher Education. Human Geography.",
       period: "2014 - 2017",
     },
     {
       institution: "Hereford Sixthform College, UK",
-      qualification: "A Levels: English Language, Computing, Geography.",
+      qualification: "A Levels: English Language, Computing, Geography, General Studies.",
       period: "2011 - 2013",
     },
   ]
