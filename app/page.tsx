@@ -288,7 +288,7 @@ export default function CVWebsite() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2 w-[120%]">George Oscar Eugene Campbell{"'"}s CV</h1>
@@ -341,7 +341,7 @@ export default function CVWebsite() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-8 space-y-8">
+      <main className="max-w-6xl mx-auto px-6 py-8 space-y-8">
         {/* Technical Skills */}
         <Card>
           <CardHeader>
