@@ -121,12 +121,13 @@ export default function CVWebsite() {
     paragraphA: "text-gray-700 leading-relaxed flex-grow",
     paragraphB: "text-gray-850 leading-relaxed flex-grow"
   }
-  const masslessExperience = [`Managed and communicated professionally with 30+ start-ups and individual clients to deliver bespoke websites, web-apps and mobile apps (2016-2026).`,
+  const masslessExperience = [[`Managed and communicated professionally with 30+ start-ups and individual clients to deliver bespoke websites, web-apps and mobile apps (2016-2026).`,
 `Architected and implemented cloud synchronization for a recent client using AWS Amplify (backend) and DynamoDB (database) with a React + Context API codebase. Integrated generative AI for automatic cyber security threat modeling utilising Vercel AI SDK - Threat Weaver (2025/26).`,
 `Sole engineer from conception to launch of a bespoke 3D browser game containing an interactive, collidable environment - communicated with stakeholders and 3D digital artists - Stamp Quest Offshore (2024/25).`,
-`Built campbellgoe/header_checker on GitHub - an open source Rust CLI application for determining missing or insecure HTTP headers as a cyber security tool (2024).`,
+  ],[`Built campbellgoe/header_checker on GitHub - an open source Rust CLI application for determining missing or insecure HTTP headers as a cyber security tool (2024).`,
 `Solo engineer for initial development of an award-winning portfolio website for Kirk Whayman, which secured 5+ SOTD (Site of the Day) awards on awwwards.com (2020).`,
-`Worked closely with a client to build an offline capable Mind Mapping web-app in vanilla HTML, ES2015 JavaScript, and CSS, utilising DOM and 2d canvas. This included saving and loading of JSON.`]
+`Worked closely with a client to build an offline capable Mind Mapping web-app in vanilla HTML, ES2015 JavaScript, and CSS, utilising DOM and 2d canvas. This included saving and loading of JSON.`
+  ]]
 const drpgExp = [
   `Optimized a performance-critical 3D web application (Winter Wonderland), increasing smartphone FPS from 2-3 to 30-60, and implemented a performant falling snow effect.`,
 `Developed the Jaguar C-Type customizer tool, which directly resulted in customer leads for Jaguar.`,
@@ -153,13 +154,13 @@ const ekcsExp = [
       location: "Remote, UK",
       description:
         <>
-            <AutoLinkText text={masslessExperience} linkMap={{
+           {masslessExperience.map(text => <AutoLinkText text={text} linkMap={{
               "Threat Weaver": "https://threatweaver.co.uk",
               "Stamp Quest Offshore": "https://stamp-quest-offshore.vercel.app",
               "campbellgoe/header_checker": "https://github.com/campbellgoe/header_checker",
               "Kirk Whayman": "https://kirkwhayman.com"
 
-            }}/>
+            }}/>)}
 
         </>,
       logos: [{
@@ -331,7 +332,7 @@ const ekcsExp = [
               <div className="h-2 w-2 bg-blue-600 rounded-full"></div>
               Technical & Soft Skills
             </CardTitle>
-            <CardDescription className="pl-[18px]"><p>I'm seeking to grow into a full-stack or a front-end role with the ability to contribute to back-end.</p><p>I have around 10 years work experience with JavaScript and 6 years with TypeScript, but would love the opportunity to write Python and/or Rust.</p></CardDescription>
+            <CardDescription className="pl-[18px]"><p>I'm seeking to grow into a full-stack or a front-end role with the ability to contribute to back-end.</p><p>I have around 10 years work experience with JavaScript and 6 years with TypeScript, strong in Python + FastAPI, & seeking to strengthen my Rust + Go.</p></CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="gap-2 pl-[20px]">
@@ -386,7 +387,7 @@ const ekcsExp = [
                     )}
                   </div>
                 </div>
-                <div className="flex flex-row items-start gap-4">
+                <div className="grid grid-cols-1 items-start gap-4">
                   {job.description}
                   <div className="flex flex-col gap-4 w-full md:w-1/3 justify-center md:justify-end items-center">
                     {job.logos.map(logo => (
