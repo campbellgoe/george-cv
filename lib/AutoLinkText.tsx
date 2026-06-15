@@ -25,5 +25,5 @@ export default function AutoLinkText({ text, linkMap = {
     })}</p>
   });
 
-  return parts;
+  return <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 break- gap-4">{parts}</div>;
 }
