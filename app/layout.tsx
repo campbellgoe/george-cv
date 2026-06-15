@@ -1,11 +1,11 @@
 import type { Metadata } from "next/types";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next"
 
 
 export const metadata: Metadata = {
   title: "George O. E. Campbell's CV",
-  description: "Curriculum Vitae of George O.E. Campbell with a link to my Portfolio website.",
+  description: "Curriculum Vitae of George O.E. Campbell with a link to my company website.",
 };
 
 export default function RootLayout({
@@ -18,6 +18,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
+        <Analytics/>
         {children}
       </body>
     </html>
