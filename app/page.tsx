@@ -255,6 +255,10 @@ const ekcsExp = [
       qualification: "A Levels: English Language, Computing, Geography, General Studies.",
       period: "2011 - 2013",
     },
+    {
+      institution: "Notable GCSEs",
+      qualification: "Maths, English, Business Studies, Geography, and History"
+    }
   ]
 
   const hobbies = [
@@ -425,11 +429,6 @@ const ekcsExp = [
                 <p className="text-gray-700">{edu.qualification}</p>
               </div>
             ))}
-            <div className="border-l-2 border-gray-200 pl-6">
-              <p className="text-gray-700">
-                <strong>Notable GCSEs:</strong> Maths, English, Business Studies, Geography, and History
-              </p>
-            </div>
           </CardContent>
         </Card>
 
