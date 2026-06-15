@@ -1,7 +1,10 @@
 "use client";
+import { MatterCanvas } from "@/components/matter/canvas";
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { colours, coloursTw } from "@/context/colours";
+import { skillsListItems } from "@/context/skills";
 import AutoLinkText from "@/lib/AutoLinkText";
 // import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, ExternalLink, MapPin, Calendar, Building } from "lucide-react"
@@ -33,112 +36,83 @@ export default function CVWebsite() {
   const OS = "Operating Systems"
   const SS = "Soft Skills"
   const AT = "Automated Testing"
-  const skillsListItems = [
-    "HTML, CSS, JavaScript, TypeScript, Rust, Python, GraphQL, SQL, Pug, EJS",
-"Windows, Linux, Ubuntu, Mint, MacOS ",
-"React.js, Next.js, React Native, Three.js, react-three-fiber",
-"Node.js, Express.js, Deno, Bun, Vite, MongoDB, Mongoose, DocumentDB, DynamoDB, Docker, Github Actions, CI/CD",
-"UI/UX Design",
-"Tailwindcss, (framer) motion, WebAPIs, Accessibility, Bevy",
-"Websockets, Socket.IO",
-"Cyber Security",
-"AWS (A wide range of experience with these services), Azure (only with TTS)",
-"Bash scripting, Terminal, Powershell, CLIs, Command Prompt  ",
-"Mocha, Jest, Bun, React Testing Framework, Cypress.js, Puppeteer, Playwright",
-"Locize, i18n + l10n",
-"NGINX",
-"Spanish",
-"Perseverance, Autonomy, Friendliness, Enthusiasm, Communication, Leadership, Empathy, Directness",
-
-  ]
+  
   // const SKILL_LABELS = [FE, FS, BE, SS, AT]
-  const skills = ([
-    [
-      FW,
-      "React.js"
-    ],
-    // {label: FE,
-    //   value: "React.js"},
-    [
-      FW, "Three.js"
-    ],
-    [
-      FW,
-      "react-three-fiber"
-    ],
-    [BE, "Node.js"],
-    [BE, "Deno"],
-    [FW, "Next.js"],
-    [LANG, "HTML"],
-    [LANG, "CSS"],
-    [LANG, "JavaScript"],
-    [LANG, "TypeScript"],
-    [LANG, "Rust"],
-    [LANG, "Python"],
-    [FE, "Tailwindcss"],
-    [FE, "(framer) motion"],
-    [FE, "WebAPIs"],
-    [FE, "Accessibility"],
-    [FS, "Cyber Security"],
-    [BE, "MongoDB"],
-    [BE, "Mongoose ORM"],
-    [BE, "DocumentDB"],
-    [FS, "Amplify"],
-    [BE, "DynamoDB"],
-    [FE, "Bevy"],
-    [FE, "UI/UX Design"],
-    [CLI, "Bash scripting"],
-    [CLI, "Terminal"],
-    [CLI, "Powershell"],
-    [CLI, "CLIs"],
-    [CLI, "Command Prompt"],
-    [OS, "MS Windows"],
-    [OS, "Linux ubuntu/mint"],
-    [OS, "MacOS"],
-    [FS, "AWS"],
-    [BE, "DevOps"],
-    [BE, "Docker"],
-    [BE, "Github Actions"],
-    [BE, "CI/CD"],
-    [AT, "Mocha"],
-    [AT, "Jest"],
-    [AT, "Bun"],
-    [AT, "Cypress.js",],
-    [AT, "Puppeteer"],
-    [AT, "Playwright"],
-    [SS, "Perseverance"],
-    [SS, "Autonomy"],
-    [SS, "Friendliness"],
-    [SS, "Enthusiasm"],
-    [SS, "Communication"],
-    [SS, "Leadership"],
-    [SS, "Empathy"]
-  ]);
+  // const skills = ([
+  //   [
+  //     FW,
+  //     "React.js"
+  //   ],
+  //   // {label: FE,
+  //   //   value: "React.js"},
+  //   [
+  //     FW, "Three.js"
+  //   ],
+  //   [
+  //     FW,
+  //     "react-three-fiber"
+  //   ],
+  //   [BE, "Node.js"],
+  //   [BE, "Deno"],
+  //   [FW, "Next.js"],
+  //   [LANG, "HTML"],
+  //   [LANG, "CSS"],
+  //   [LANG, "JavaScript"],
+  //   [LANG, "TypeScript"],
+  //   [LANG, "Rust"],
+  //   [LANG, "Python"],
+  //   [FE, "Tailwindcss"],
+  //   [FE, "(framer) motion"],
+  //   [FE, "WebAPIs"],
+  //   [FE, "Accessibility"],
+  //   [FS, "Cyber Security"],
+  //   [BE, "MongoDB"],
+  //   [BE, "Mongoose ORM"],
+  //   [BE, "DocumentDB"],
+  //   [FS, "Amplify"],
+  //   [BE, "DynamoDB"],
+  //   [FE, "Bevy"],
+  //   [FE, "UI/UX Design"],
+  //   [CLI, "Bash scripting"],
+  //   [CLI, "Terminal"],
+  //   [CLI, "Powershell"],
+  //   [CLI, "CLIs"],
+  //   [CLI, "Command Prompt"],
+  //   [OS, "MS Windows"],
+  //   [OS, "Linux ubuntu/mint"],
+  //   [OS, "MacOS"],
+  //   [FS, "AWS"],
+  //   [BE, "DevOps"],
+  //   [BE, "Docker"],
+  //   [BE, "Github Actions"],
+  //   [BE, "CI/CD"],
+  //   [AT, "Mocha"],
+  //   [AT, "Jest"],
+  //   [AT, "Bun"],
+  //   [AT, "Cypress.js",],
+  //   [AT, "Puppeteer"],
+  //   [AT, "Playwright"],
+  //   [SS, "Perseverance"],
+  //   [SS, "Autonomy"],
+  //   [SS, "Friendliness"],
+  //   [SS, "Enthusiasm"],
+  //   [SS, "Communication"],
+  //   [SS, "Leadership"],
+  //   [SS, "Empathy"]
+  // ]);
 
-  const colours: { [key: string]: string } = {
-    // red
-    [FE]: "bg-stone-100",
+ 
 
-    // orange
-    [FS]: "bg-stone-100",
-    // yellow
-    [BE]: "bg-stone-100",
-    // green
-    [SS]: "bg-stone-100",
-    //blue
-    [AT]: "bg-stone-100"
-  }
-
-  const groupedSkills = skills.reduce((acc, [Key, Value]) => {
-    return {
-      ...acc,
-      [Key]: {
-        label: Key,
-        values: [...(acc?.[Key]?.values || []), Value],
-        colour: colours[Key]
-      }
-    }
-  }, {} as { [key: string]: { values: string[]; label: string; colour: string } })
+  // const groupedSkills = skills.reduce((acc, [Key, Value]) => {
+  //   return {
+  //     ...acc,
+  //     [Key]: {
+  //       label: Key,
+  //       values: [...(acc?.[Key]?.values || []), Value],
+  //       colour: colours[Key]
+  //     }
+  //   }
+  // }, {} as { [key: string]: { values: string[]; label: string; colour: string } })
   // Map.groupBy(skills, ([groupLabel, value]) => {
   //   return SKILL_LABELS.includes(groupLabel) ? {key: groupLabel} : {key: value}
   // })
@@ -361,15 +335,16 @@ const ekcsExp = [
           </CardHeader>
           <CardContent>
             <ul className="gap-2 pl-[20px]">
+              <MatterCanvas />
               {/* {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => { */}
               {skillsListItems.map((itemText) => {
                 
                 return <li key={itemText} className="list-outside list-disc">
                    {/* <Badge variant="secondary" className={"m-1 text-sm"}></Badge> */}
-                   <h3 className="font-bold bg-stone-150 inline-block">{itemText.split(", ").map((word, i, arr) => {
-                    const colours = ["text-red-500", "text-orange-500", "text-yellow-500", "text-green-500", "text-blue-500", "text-cyan-500", "text-violet-500", ]
-                    const colour = colours[i%colours.length]
-                    return <span className={colour}>{word}{i < arr.length - 1 ? ", " : ""}</span>
+                   <h3 className="font-bold bg-stone-150 inline-block">
+                    {itemText.split(", ").map((word, i, arr) => {
+                    const colour =  coloursTw[i%coloursTw.length]
+                    return <span key={word+"-"+i} className={colour}>{word}{i < arr.length - 1 ? ", " : ""}</span>
 })}</h3>
                 </li>
                })}
