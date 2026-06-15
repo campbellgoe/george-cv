@@ -1,13 +1,16 @@
 "use client";
+import { MatterCanvas } from "@/components/matter/canvas";
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { colours, coloursTw } from "@/context/colours";
+import { skillsListItems } from "@/context/skills";
+import AutoLinkText from "@/lib/AutoLinkText";
 // import { Separator } from "@/components/ui/separator"
 import { Mail, Phone, ExternalLink, MapPin, Calendar, Building } from "lucide-react"
 import Image from "next/image"
 
 // Import images
-const TravelLocalLogo = "/images/travellocal-logo.svg"
 const MasslessLogo = "/images/massless-ltd-website-logo.webp"
 const ZengentiLogo = "/images/logos/zengenti.png"
 const DrpgLogo = "/images/logos/DRPG_40_AGENCY.svg"
@@ -33,94 +36,83 @@ export default function CVWebsite() {
   const OS = "Operating Systems"
   const SS = "Soft Skills"
   const AT = "Automated Testing"
+  
   // const SKILL_LABELS = [FE, FS, BE, SS, AT]
-  const skills = ([
-    [
-      FW,
-      "React.js"
-    ],
-    // {label: FE,
-    //   value: "React.js"},
-    [
-      FW, "Three.js"
-    ],
-    [
-      FW,
-      "react-three-fiber"
-    ],
-    [BE, "Node.js"],
-    [BE, "Deno"],
-    [FW, "Next.js"],
-    [LANG, "HTML"],
-    [LANG, "CSS"],
-    [LANG, "JavaScript"],
-    [LANG, "TypeScript"],
-    [LANG, "Rust"],
-    [LANG, "Python"],
-    [FE, "Tailwindcss"],
-    [FE, "(framer) motion"],
-    [FE, "WebAPIs"],
-    [FE, "Accessibility"],
-    [FS, "Cyber Security"],
-    [BE, "MongoDB"],
-    [BE, "Mongoose ORM"],
-    [BE, "DocumentDB"],
-    [FS, "Amplify"],
-    [BE, "DynamoDB"],
-    [FE, "Bevy"],
-    [FE, "UI/UX Design"],
-    [CLI, "Bash scripting"],
-    [CLI, "Terminal"],
-    [CLI, "Powershell"],
-    [CLI, "CLIs"],
-    [CLI, "Command Prompt"],
-    [OS, "MS Windows"],
-    [OS, "Linux ubuntu/mint"],
-    [OS, "MacOS"],
-    [FS, "AWS"],
-    [BE, "DevOps"],
-    [BE, "Docker"],
-    [BE, "Github Actions"],
-    [BE, "CI/CD"],
-    [AT, "Mocha"],
-    [AT, "Jest"],
-    [AT, "Bun"],
-    [AT, "Cypress.js",],
-    [AT, "Puppeteer"],
-    [AT, "Playwright"],
-    [SS, "Perseverance"],
-    [SS, "Autonomy"],
-    [SS, "Friendliness"],
-    [SS, "Enthusiasm"],
-    [SS, "Communication"],
-    [SS, "Leadership"],
-    [SS, "Empathy"]
-  ]);
+  // const skills = ([
+  //   [
+  //     FW,
+  //     "React.js"
+  //   ],
+  //   // {label: FE,
+  //   //   value: "React.js"},
+  //   [
+  //     FW, "Three.js"
+  //   ],
+  //   [
+  //     FW,
+  //     "react-three-fiber"
+  //   ],
+  //   [BE, "Node.js"],
+  //   [BE, "Deno"],
+  //   [FW, "Next.js"],
+  //   [LANG, "HTML"],
+  //   [LANG, "CSS"],
+  //   [LANG, "JavaScript"],
+  //   [LANG, "TypeScript"],
+  //   [LANG, "Rust"],
+  //   [LANG, "Python"],
+  //   [FE, "Tailwindcss"],
+  //   [FE, "(framer) motion"],
+  //   [FE, "WebAPIs"],
+  //   [FE, "Accessibility"],
+  //   [FS, "Cyber Security"],
+  //   [BE, "MongoDB"],
+  //   [BE, "Mongoose ORM"],
+  //   [BE, "DocumentDB"],
+  //   [FS, "Amplify"],
+  //   [BE, "DynamoDB"],
+  //   [FE, "Bevy"],
+  //   [FE, "UI/UX Design"],
+  //   [CLI, "Bash scripting"],
+  //   [CLI, "Terminal"],
+  //   [CLI, "Powershell"],
+  //   [CLI, "CLIs"],
+  //   [CLI, "Command Prompt"],
+  //   [OS, "MS Windows"],
+  //   [OS, "Linux ubuntu/mint"],
+  //   [OS, "MacOS"],
+  //   [FS, "AWS"],
+  //   [BE, "DevOps"],
+  //   [BE, "Docker"],
+  //   [BE, "Github Actions"],
+  //   [BE, "CI/CD"],
+  //   [AT, "Mocha"],
+  //   [AT, "Jest"],
+  //   [AT, "Bun"],
+  //   [AT, "Cypress.js",],
+  //   [AT, "Puppeteer"],
+  //   [AT, "Playwright"],
+  //   [SS, "Perseverance"],
+  //   [SS, "Autonomy"],
+  //   [SS, "Friendliness"],
+  //   [SS, "Enthusiasm"],
+  //   [SS, "Communication"],
+  //   [SS, "Leadership"],
+  //   [SS, "Empathy"]
+  // ]);
 
-  const colours: { [key: string]: string } = {
-    // red
-    [FE]: "bg-stone-100",
+ 
 
-    // orange
-    [FS]: "bg-stone-100",
-    // yellow
-    [BE]: "bg-stone-100",
-    // green
-    [SS]: "bg-stone-100",
-    //blue
-    [AT]: "bg-stone-100"
-  }
-
-  const groupedSkills = skills.reduce((acc, [Key, Value]) => {
-    return {
-      ...acc,
-      [Key]: {
-        label: Key,
-        values: [...(acc?.[Key]?.values || []), Value],
-        colour: colours[Key]
-      }
-    }
-  }, {} as { [key: string]: { values: string[]; label: string; colour: string } })
+  // const groupedSkills = skills.reduce((acc, [Key, Value]) => {
+  //   return {
+  //     ...acc,
+  //     [Key]: {
+  //       label: Key,
+  //       values: [...(acc?.[Key]?.values || []), Value],
+  //       colour: colours[Key]
+  //     }
+  //   }
+  // }, {} as { [key: string]: { values: string[]; label: string; colour: string } })
   // Map.groupBy(skills, ([groupLabel, value]) => {
   //   return SKILL_LABELS.includes(groupLabel) ? {key: groupLabel} : {key: value}
   // })
@@ -129,6 +121,30 @@ export default function CVWebsite() {
     paragraphA: "text-gray-700 leading-relaxed flex-grow",
     paragraphB: "text-gray-850 leading-relaxed flex-grow"
   }
+  const masslessExperience = [`Managed and communicated professionally with 30+ start-ups and individual clients to deliver bespoke websites, web-apps and mobile apps (2016-2026).`,
+`Architected and implemented cloud synchronization for a recent client using AWS Amplify (backend) and DynamoDB (database) with a React + Context API codebase. Integrated generative AI for automatic cyber security threat modeling utilising Vercel AI SDK - Threat Weaver (2025/26).`,
+`Sole engineer from conception to launch of a bespoke 3D browser game containing an interactive, collidable environment - communicated with stakeholders and 3D digital artists - Stamp Quest Offshore (2024/25).`,
+`Built campbellgoe/header_checker on GitHub - an open source Rust CLI application for determining missing or insecure HTTP headers as a cyber security tool (2024).`,
+`Solo engineer for initial development of an award-winning portfolio website for Kirk Whayman, which secured 5+ SOTD (Site of the Day) awards on awwwards.com (2020).`,
+`Worked closely with a client to build an offline capable Mind Mapping web-app in vanilla HTML, ES2015 JavaScript, and CSS, utilising DOM and 2d canvas. This included saving and loading of JSON.`]
+const drpgExp = [
+  `Optimized a performance-critical 3D web application (Winter Wonderland), increasing smartphone FPS from 2-3 to 30-60, and implemented a performant falling snow effect.`,
+`Developed the Jaguar C-Type customizer tool, which directly resulted in customer leads for Jaguar.`,
+`Drove development on a 3D virtual events and conferencing web-app, implementing video projections onto 3D surfaces for an immersive experience.`,
+`Communicated professionally with colleagues and engaged in daily standups, sprint retrospectives, and monthly meetings as well as virtual events during the pandemic.`,
+]
+const zengentiExp = [
+  `Worked in a cross-functional team (engineers and UI/UX designers) to deliver 6+ websites for UK councils and universities.`,
+`Ensured UI accessibility and WCAG compliance for screen-readers and color-blindness considerations.`,
+`Informally mentored a junior developer, proactively resolving technical challenges to increase their independence.`
+
+]
+const ekcsExp = [
+  `Worked in-house mainly in React & Node.js to develop a media pipeline SaaS application.`,
+`Implemented a modular i18n (internationalization) solution into the React codebase, utilizing Locize for translator workflow.`,
+`Wrote extensive Mocha tests to ensure code quality and stability.`,
+`Gained experience working in a small team, utilizing JIRA and Git for daily development.`,
+]
   const workExperience = [
     {
       title: "Director + Software Engineer",
@@ -137,24 +153,13 @@ export default function CVWebsite() {
       location: "Remote, UK",
       description:
         <>
-          <div>
-            <p className={styles.paragraphA}>
-              I utilise my problem solving abilities, technical and creative and communication and leadership skills to build bespoke software solutions.
-            </p>
-            <p className={styles.paragraphB}>
-              I communicated professionally and effectively with 30+ smaller start-ups and individual professionals to provide invaluable digital experiences.
-            </p>
-            <p className={styles.paragraphA}>For a recent client in 2025/26 I implemented cloud synchronisation via AWS Amplify for the backend with DynamoDB for the database, and generative AI for automatic cyber security threat modelling.</p>
-          </div>
-          <div>
+            <AutoLinkText text={masslessExperience} linkMap={{
+              "Threat Weaver": "https://threatweaver.co.uk",
+              "Stamp Quest Offshore": "https://stamp-quest-offshore.vercel.app",
+              "campbellgoe/header_checker": "https://github.com/campbellgoe/header_checker",
+              "Kirk Whayman": "https://kirkwhayman.com"
 
-            <p className={styles.paragraphA}>I worked from junior level, mid then at senior level, including experiences as a team leader, to bring projects from conception to launch.</p>
-            <p className={styles.paragraphB}>For example in 2020 I was the solo engineer for an award winning project for an independent professional who hired me for their website development needs <a href="https://kirkwhayman.com" target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-4 w-4 mr-2" />
-              https://kirkwhayman.com
-            </a> which won 5+ SOTD (Site of the Day) awards on awwwards.com and earned me over £12,000 across 2½ months.</p>
-            
-          </div>
+            }}/>
 
         </>,
       logos: [{
@@ -175,32 +180,13 @@ export default function CVWebsite() {
       }]
     },
     {
-      title: "Front-end Engineer",
-      company: "TravelLocal",
-      period: "March 2023 - November 2023 (9 months)",
-      location: "Remote",
-      description: <>
-        <p className={styles.paragraphA}>{`This was an opportunity which strengthened my Front-End engineering abilities, and the daily asynchronous communication along with helpful feedback helped increase my professional communication skills.`}</p>
-        <p className={styles.paragraphB}>{`Utilising Next.js, React, GraphQL, Storybook and other technologies I worked on unique technical challenges, built components and pages, and wrote automated tests for the start-up - solving over 120 unique tasks and helping to overcome tasks marked as "blocked".`}</p>
-      </>,
-      logos: [{
-        logo: TravelLocalLogo,
-        logoAlt: "TravelLocal Logo",
-        companyLink: "https://www.travellocal.com/",
-        logoStyle: "w-full",
-        width: 250,
-        height: 250
-      }]
-    },
-    {
       title: "Software Engineer",
       company: "DRPG",
       period: "October 2020 to August 2022 (1 year 11 months)",
       location: "Remote",
       description: <>
-        <p className={styles.paragraphA}>I debugged and optimised a 3D web app, a winter wonderland celebrating 40 years of DRPG, taking the FPS (Frames Per Second) on smartphone devices from 2-3 FPS to 30-60 FPS. I also implemented a performant falling snow effect into the wintery scene, containing thousands of animated snow flakes.</p>
-        <p className={styles.paragraphB}>I developed the Jaguar C-Type customiser tool with support from a junior engineer. Jaguar received over 8 customers for the C-Type continuation via the customiser app. DRPG earned an estimated £48,000 for this 1½ month project based on the £1600/day statistic I was shown.</p>
-        <p className={styles.paragraphA}>I drove development on a 3D virtual events and conferencing web-app including implementing video projections onto 3D surfaces, bringing the virtual environment to life and an immersive, engaging experience.</p>
+         <AutoLinkText text={drpgExp} linkMap={{
+            }}/>
       </>,
       logos: [{
         logo: DrpgLogo,
@@ -217,9 +203,7 @@ export default function CVWebsite() {
       period: "April 2019 - April 2020 (1 year)",
       location: "In house - Ludlow countryside",
       description: <>
-        <p className={styles.paragraphA}>This was an opportunity to work together as a team of engineers and UI/UX designers on 6+ websites for various councils and universities in the UK.</p>
-        <p className={styles.paragraphB}>I informally mentored a junior developer, helping them become more independent, as they were sat next of me - and I proactively helped them get un-stuck on technical challenges.</p>
-        <p className={styles.paragraphA}>My job involved improving the quality of the react/redux, front-end codebases, taking care to ensure the UI worked properly for screen-readers and people with accessibility considerations such as people with colour-blindness.</p>
+        <AutoLinkText text={zengentiExp} linkMap={{}}/>
       </>,
       logos: [{
         logo: ZengentiLogo,
@@ -236,8 +220,7 @@ export default function CVWebsite() {
       period: "June 2018 - April 2019 (11 months)",
       location: "In house - Milton Keynes countryside",
       description: <>
-        <p className={styles.paragraphA}>This was my first time working in a small team of designers and developers, where I also learnt how to use JIRA and Git for daily use.</p>
-        <p className={styles.paragraphB}>I implemented a modular i18n solution into the React codebase, using Locize for translators, and wrote lots of mocha tests.</p>
+       <AutoLinkText text={ekcsExp} linkMap={{}}/>
       </>,
       logos: [{
         logo: EKCSLogo,
@@ -257,13 +240,18 @@ export default function CVWebsite() {
       period: "2024 - 2025",
     },
     {
+      institution: "North Lindsey College",
+      qualification: "Level 2 Certificate in Understanding Mental Health First Aid & Mental Health Advocacy in the Workplace",
+      period: "2022"
+    },
+    {
       institution: "University of Portsmouth (UoP), UK",
       qualification: "Diploma of Higher Education. Human Geography.",
       period: "2014 - 2017",
     },
     {
       institution: "Hereford Sixthform College, UK",
-      qualification: "A Levels: English Language, Computing, Geography.",
+      qualification: "A Levels: English Language, Computing, Geography, General Studies.",
       period: "2011 - 2013",
     },
   ]
@@ -276,19 +264,18 @@ export default function CVWebsite() {
     "Cooking tasty & healthy meals",
     "Gaming (Counter Strike, TrackMania, GTA, Don't Starve, DayZ)",
     "Creative and business side projects",
-    "Learning languages such as Spanish and Rust"
+    "Learning languages such as Spanish and Russian"
   ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
-        <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2 w-[120%]">George Oscar Eugene Campbell{"'"}s CV</h1>
-              
-              <p className="text-xl text-gray-600 mb-4">{"Software engineer and director with 5+ years building award-winning web experiences for startups, specialising in React, Next.js & Three.js, engineering resilient and performant software."}</p>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2 w-[120%]">George Oscar Eugene Campbell{"'"}s CV</h1> 
+              <p className="text-xl text-gray-600 mb-4">{"Software engineer and director with 5+ years building award winning front-end heavy products for startups and engineering resilient and performant back-end and database integrations."}</p>
               <p className="font-bold text-gray-900 mb-2">{"I overcome problems an LLM and vibe coding can't."}</p>
             </div>
             <div className="flex flex-col gap-3 text-sm">
@@ -336,28 +323,31 @@ export default function CVWebsite() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-8 space-y-8">
+      <main className="max-w-6xl mx-auto px-6 py-8 space-y-8">
         {/* Technical Skills */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <div className="h-2 w-2 bg-blue-600 rounded-full"></div>
-              Technical Skills
+              Technical & Soft Skills
             </CardTitle>
-            <CardDescription className="pl-[18px]">Best at front-end, capable of back-end</CardDescription>
+            <CardDescription className="pl-[18px]"><p>I'm seeking to grow into a full-stack or a front-end role with the ability to contribute to back-end.</p><p>I have around 10 years work experience with JavaScript and 6 years with TypeScript, but would love the opportunity to write Python and/or Rust.</p></CardDescription>
           </CardHeader>
           <CardContent>
-            <ul className="flex flex-wrap gap-2 pl-[20px]">
-              {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => {
-                return <li key={skillLabel} className="list-outside list-disc">
-                  <h3 className="font-bold bg-stone-150 inline-block">{skillLabel}</h3>
-                  {values.map(skill => {
-                    return <Badge key={skill} variant="secondary" className={"m-1 text-sm " + colour}>
-                      {skill}
-                    </Badge>
-                  })}
+            <ul className="gap-2 pl-[20px]">
+              <MatterCanvas />
+              {/* {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => { */}
+              {skillsListItems.map((itemText) => {
+                
+                return <li key={itemText} className="list-outside list-disc">
+                   {/* <Badge variant="secondary" className={"m-1 text-sm"}></Badge> */}
+                   <h3 className="font-bold bg-stone-150 inline-block">
+                    {itemText.split(", ").map((word, i, arr) => {
+                    const colour =  coloursTw[i%coloursTw.length]
+                    return <span key={word+"-"+i} className={colour}>{word}{i < arr.length - 1 ? ", " : ""}</span>
+})}</h3>
                 </li>
-              })}
+               })}
             </ul>
           </CardContent>
         </Card>
