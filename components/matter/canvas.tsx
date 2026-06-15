@@ -29,7 +29,7 @@ export const MatterCanvas = () => {
 
     const textureCanvases = skills.map((skill, i) => {
       return createTextTexture(skill, {
-      font: "24px Arial",
+      font: "20px Arial",
       fillStyle: colours[i%colours.length],
     })
   })
