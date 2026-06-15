@@ -10,7 +10,7 @@ export default function AutoLinkText({ text, linkMap = {
 
   // 3. Split the text and map matches to next/link
   const parts = text.map((column, index) => {
-    return <p>{column.split(pattern).map(part => {
+    return <p key={index}>{column.split(pattern).map(part => {
       const matchedKey = part.toLowerCase();
       const href = linkMap[Object.keys(linkMap).find(k => k.toLowerCase() === matchedKey) || ''];
 

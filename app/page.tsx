@@ -1,4 +1,5 @@
 "use client";
+import { MatterCanvas } from "@/components/matter/canvas";
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -361,15 +362,17 @@ const ekcsExp = [
           </CardHeader>
           <CardContent>
             <ul className="gap-2 pl-[20px]">
+              <MatterCanvas />
               {/* {Object.entries(groupedSkills).map(([skillLabel, { values, colour = "" }]) => { */}
               {skillsListItems.map((itemText) => {
                 
                 return <li key={itemText} className="list-outside list-disc">
                    {/* <Badge variant="secondary" className={"m-1 text-sm"}></Badge> */}
-                   <h3 className="font-bold bg-stone-150 inline-block">{itemText.split(", ").map((word, i, arr) => {
+                   <h3 className="font-bold bg-stone-150 inline-block">
+                    {itemText.split(", ").map((word, i, arr) => {
                     const colours = ["text-red-500", "text-orange-500", "text-yellow-500", "text-green-500", "text-blue-500", "text-cyan-500", "text-violet-500", ]
                     const colour = colours[i%colours.length]
-                    return <span className={colour}>{word}{i < arr.length - 1 ? ", " : ""}</span>
+                    return <span key={word+"-"+i} className={colour}>{word}{i < arr.length - 1 ? ", " : ""}</span>
 })}</h3>
                 </li>
                })}
